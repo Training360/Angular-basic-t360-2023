@@ -1,1 +1,1 @@
-# angular-basic-t360-2023
+# Angular alapozó képzés
