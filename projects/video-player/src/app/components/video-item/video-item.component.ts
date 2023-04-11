@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Video } from 'src/app/model/video';
 
 @Component({
   selector: 'app-video-item',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./video-item.component.scss']
 })
 export class VideoItemComponent {
+
+  @Input() video: Video = new Video();
 
 }
