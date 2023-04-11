@@ -18,4 +18,24 @@ export class UserService {
     return this.http.get<User[]>(`${this.baseURL}${this.urlFragment}`);
   }
 
+  get(id: number): Observable<User> {
+    return this.http.get<User>(`${this.baseURL}${this.urlFragment}/${id}`);
+  }
+
+  update(user: User): Observable<User> {
+    return this.http.patch<User>(
+      `${this.baseURL}${this.urlFragment}/${user.id}`,
+      user,
+    );
+  }
+
+  create(user: User): Observable<User> {
+    return this.http.post<User>(this.baseURL, user);
+  }
+
+  remove(id: number): Observable<User> {
+    return this.http.delete<User>(`${this.baseURL}${this.urlFragment}/${id}`);
+  }
+
+
 }
