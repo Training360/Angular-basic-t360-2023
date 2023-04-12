@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersTableComponent } from './components/users-table/users-table.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { ReversePipe } from './pipe/reverse.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersTableComponent,
-    UserFormComponent
+    UserFormComponent,
+    ReversePipe
   ],
   imports: [
     BrowserModule,
