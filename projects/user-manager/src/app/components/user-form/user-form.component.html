@@ -1,0 +1,44 @@
+<div
+  class="d-flex flex-column align-items-center"
+  *ngIf="user$ | async as user"
+>
+  <h2>Create new user</h2>
+  <form #userForm="ngForm" (ngSubmit)="handleFormSubmit(userForm, user)">
+    <div class="mb-3">
+      <label for="emailAddress">Email address</label>
+      <input
+        id="emailAddress"
+        name="emailAddress"
+        [(ngModel)]="user.emailAddress"
+        type="email"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="firstName">First name</label>
+      <input
+        id="firstName"
+        name="firstName"
+        [(ngModel)]="user.firstName"
+        type="text"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="lastName">Last name</label>
+      <input
+        id="lastName"
+        name="lastName"
+        [(ngModel)]="user.lastName"
+        type="text"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <button [disabled]="userForm.invalid" class="btn btn-primary bt-lg" type="submit">Save</button>
+    </div>
+  </form>
+</div>

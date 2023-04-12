@@ -14,9 +14,16 @@ export class UsersTableComponent {
 
   users$: Observable<User[]> = this.userService.getAll();
 
+  user: User = new User();
+
+  ngOnInit(): void {
+    this.userService.getAll();
+  }
+
   handleDeleteClick(id: number): void {
     confirm('Are you sure?');
     this.userService.remove(id).subscribe(
       () => this.users$ = this.userService.getAll())
   }
+
 }

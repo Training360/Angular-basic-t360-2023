@@ -30,7 +30,7 @@ export class UserService {
   }
 
   create(user: User): Observable<User> {
-    return this.http.post<User>(this.baseURL, user);
+    return this.http.post<User>(`${this.baseURL}${this.urlFragment}`, user);
   }
 
   remove(id: number): Observable<User> {
