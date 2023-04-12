@@ -14,8 +14,7 @@ export class UserFormComponent {
 
   userService: UserService = inject(UserService);
 
-  user$: Observable<User> = of(new User() );
-  user: User = new User();
+  user$: Observable<User> = of(new User());
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,7 +26,7 @@ export class UserFormComponent {
     this.activatedRoute.params.subscribe(
       params => {
         if (params['id'] == 0) {
-          this.user$ = of( new User() );
+          this.user$ = of(new User());
         } else {
           this.user$ = this.userService.get(params['id']);
         }

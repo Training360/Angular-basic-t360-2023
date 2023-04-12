@@ -14,8 +14,6 @@ export class UsersTableComponent {
 
   users$: Observable<User[]> = this.userService.getAll();
 
-  user: User = new User();
-
   ngOnInit(): void {
     this.userService.getAll();
   }
