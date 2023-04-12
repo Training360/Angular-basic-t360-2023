@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { UsersTableComponent } from './components/users-table/users-table.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { ReversePipe } from './pipe/reverse.pipe';
+import { AppTitleComponent } from './components/app-title/app-title.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersTableComponent,
     UserFormComponent,
-    ReversePipe
+    ReversePipe,
+    AppTitleComponent
   ],
   imports: [
     BrowserModule,
