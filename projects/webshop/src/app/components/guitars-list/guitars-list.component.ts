@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Guitar } from 'src/app/model/guitar';
+import { GuitarService } from 'src/app/service/guitar.service';
 
 @Component({
   selector: 'app-guitars-list',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./guitars-list.component.scss']
 })
 export class GuitarsListComponent {
+
+  guitarService: GuitarService = inject(GuitarService);
+
+  guitars$: Observable<Guitar[]> = this.guitarService.getAll();
 
 }
