@@ -1,0 +1,41 @@
+@use '../assets/modules/colors' as *;
+
+::ng-deep * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.text {
+
+  &-center {
+    text-align: center;
+  }
+
+  &-red {
+    color: $red;
+  }
+
+  &-orange {
+    color: $orange;
+  }
+
+  &-green {
+   color: $green;
+  }
+
+}
