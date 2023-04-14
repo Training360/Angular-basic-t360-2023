@@ -1,0 +1,30 @@
+@use '../../../assets/modules/colors' as *;
+
+.nav {
+  background: $dark;
+
+  &__list {
+    margin: 0;
+    padding: 1rem 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    padding: 0 1rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1.35rem;
+    font-weight: 500;
+  }
+
+  a {
+    color: $green;
+  }
+
+}
+
