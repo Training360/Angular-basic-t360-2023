@@ -8,6 +8,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { VideoDetailsComponent } from './components/video-details/video-details.component';
 import { VideoItemComponent } from './components/video-item/video-item.component';
 import { VideoListComponent } from './components/video-list/video-list.component';
+import { FilterPipe } from './pipe/filter.pipe';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { VideoListComponent } from './components/video-list/video-list.component
     SearchBarComponent,
     VideoDetailsComponent,
     VideoItemComponent,
-    VideoListComponent
+    VideoListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]
