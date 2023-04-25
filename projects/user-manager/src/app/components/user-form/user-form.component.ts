@@ -16,10 +16,8 @@ export class UserFormComponent {
 
   user$: Observable<User> = of(new User());
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
-    ) { }
+  activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+  router: Router = inject(Router);
 
    ngOnInit(): void {
     this.userService.getAll();
