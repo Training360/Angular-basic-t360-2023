@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { Video } from '../model/video';
+import { inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class VideoService {
   key: string = 'AIzaSyCNYVz2WNwMqpivd2MuXi4bIlnnDUZhVXg';
   baseURL: string = 'https://www.googleapis.com/youtube/v3/search';
 
-  constructor(private readonly http: HttpClient) {}
+  http: HttpClient = inject(HttpClient);
 
   defaultParams: {part: string, maxResults: number, key: string, query: string} = {
     part: 'snippet',
