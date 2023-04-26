@@ -12,7 +12,6 @@ import { UserService } from 'src/app/service/user.service';
 export class UsersTableComponent {
 
   userService: UserService = inject(UserService);
-
   users$: Observable<User[]> = this.userService.getAll();
 
   phrase : string = '';
