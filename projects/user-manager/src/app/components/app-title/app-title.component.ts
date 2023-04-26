@@ -8,5 +8,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class AppTitleComponent {
 
   @Input() title: string = '';
+  @Input() message: string = '';
+  @Output() buttonWasClicked = new EventEmitter<void>();
 
+  onButtonClick() {
+    this.buttonWasClicked.emit();
+  }
 }

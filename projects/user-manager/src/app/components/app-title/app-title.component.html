@@ -1,3 +1,7 @@
-<nav class="navbar bg-primary justify-content-center">
-  <a class="navbar-brand text-white h4 ms-2 mb-0">{{ title }}</a>
+<nav class="navbar bg-primary d-flex">
+  <a class="navbar-brand text-white h4 mb-0 me-auto p-2">{{ title }}</a>
+  <span class="text-white p-2">{{ message }}</span>
+  <button class="btn btn-outline-light p-2 me-2" (click)="onButtonClick()">
+    Output demo
+  </button>
 </nav>

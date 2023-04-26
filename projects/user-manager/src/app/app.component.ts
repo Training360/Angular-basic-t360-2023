@@ -8,5 +8,9 @@ import { Component, Output } from '@angular/core';
 export class AppComponent {
 
   currentTitle = 'User manager application';
+  currentMessage: string = 'A simple Angular app';
 
+  buttonClickedMessage() {
+    this.currentMessage = 'Hey, you have just clicked the button';
+}
 }
