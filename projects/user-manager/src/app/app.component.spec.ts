@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'user-manager'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('user-manager');
+    expect(app.currentTitle).toEqual('User manager application');
   });
 
   it('should render title', () => {

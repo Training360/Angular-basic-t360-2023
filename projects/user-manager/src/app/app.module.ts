@@ -9,6 +9,7 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { ReversePipe } from './pipe/reverse.pipe';
 import { AppTitleComponent } from './components/app-title/app-title.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppTitleComponent } from './components/app-title/app-title.component';
     UsersTableComponent,
     UserFormComponent,
     ReversePipe,
-    AppTitleComponent
+    AppTitleComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
