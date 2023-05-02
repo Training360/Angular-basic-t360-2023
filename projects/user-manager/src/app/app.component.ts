@@ -11,6 +11,8 @@ export class AppComponent {
   currentMessage: string = 'A simple Angular app';
 
   buttonClickedMessage() {
-    this.currentMessage = 'Hey, you have just clicked the button';
+    if (this.currentMessage === 'Hey, you have just clicked the button')
+      this.currentMessage = "A simple Angular app";
+    else this.currentMessage = 'Hey, you have just clicked the button';
 }
 }
