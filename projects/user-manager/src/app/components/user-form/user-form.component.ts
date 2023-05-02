@@ -13,25 +13,18 @@ import { UserService } from 'src/app/service/user.service';
 export class UserFormComponent {
 
   userService: UserService = inject(UserService);
-
-  user$: Observable<User> = of(new User());
-
   activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   router: Router = inject(Router);
 
-   ngOnInit(): void {
-    this.userService.getAll();
-    this.activatedRoute.params.subscribe(
-      params => {
-        if (params['id'] == 0) {
-          this.user$ = of(new User());
-        } else {
-          this.user$ = this.userService.get(params['id']);
-        }
-      })
-   }
+  user: User = new User();
 
-   handleFormSubmit(userForm: NgForm, user: User): void {
+  user$: Observable<User> = this.activatedRoute.params.pipe(
+    switchMap((params) =>
+      params['id'] != '0' ? this.userService.get(params['id']) : of(new User())
+    )
+  );
+
+  handleFormSubmit(userForm: NgForm, user: User): void {
     if (user.id == 0) {
       this.userService.create(user).subscribe(
         () => this.router.navigate([''])
