@@ -27,6 +27,9 @@ export class AppTitleComponent {
     console.log('I am invoked only once.');
   }
 
+  // *ngIf demo
+  isShown: boolean = true;
+
   // Interval() clock
   clock: Observable<Date> = of(new Date());
   http: HttpClient = inject(HttpClient);
