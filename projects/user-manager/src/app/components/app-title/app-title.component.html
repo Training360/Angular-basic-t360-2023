@@ -1,6 +1,6 @@
 <nav class="navbar bg-primary d-flex px-2">
   <a class="navbar-brand text-white h4 mb-sm-0 me-sm-auto p-sm-2">{{ title | titlecase }}</a>
-  <h4 *ngIf="isShown" class="text-warning mb-sm-0 me-sm-auto ps-sm-5">{{ clock | async | date: 'hh:mm:ss a' }}</h4>
+  <h4 *ngIf="isShown" class="text-warning mb-sm-0 me-sm-auto">{{ clock | async | date: 'hh:mm:ss a' }}</h4>
   <span class="text-warning p-sm-2">{{ message }}</span>
   <button class="btn btn-outline-light p-sm-2 me-sm-2" (click)="onButtonClick()">
     Output demo
