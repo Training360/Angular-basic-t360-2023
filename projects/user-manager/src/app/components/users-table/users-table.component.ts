@@ -14,20 +14,26 @@ export class UsersTableComponent {
   userService: UserService = inject(UserService);
   users$: Observable<User[]> = this.userService.getAll();
 
+  // Search
   phrase : string = '';
 
   searchUser(event : Event): void {
       this.phrase = (event.target as HTMLInputElement).value;
   }
 
-  ngOnInit(): void {
-    this.userService.getAll();
-  }
-
+  // Delete
   handleDeleteClick(id: number): void {
     confirm('Are you sure?');
     this.userService.remove(id).subscribe(
       () => this.users$ = this.userService.getAll())
   }
+
+  // Sort
+  columnKey: string = '';
+
+  onColumnSelect(key: string): void {
+    this.columnKey = key;
+  }
+
 
 }

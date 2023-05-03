@@ -10,6 +10,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { ReversePipe } from './pipe/reverse.pipe';
 import { AppTitleComponent } from './components/app-title/app-title.component';
 import { FilterPipe } from './pipe/filter.pipe';
+import { SorterPipe } from './pipe/sorter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FilterPipe } from './pipe/filter.pipe';
     UserFormComponent,
     ReversePipe,
     AppTitleComponent,
-    FilterPipe
+    FilterPipe,
+    SorterPipe
   ],
   imports: [
     BrowserModule,
