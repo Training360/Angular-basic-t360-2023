@@ -4,7 +4,7 @@
 >
   <h2 class="text-dark pt-4 pb-3">User Data</h2>
   <form #userForm="ngForm" (ngSubmit)="handleFormSubmit(userForm, user)">
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <label for="emailAddress">Email address</label>
       <input
         id="emailAddress"
@@ -12,10 +12,17 @@
         [(ngModel)]="user.emailAddress"
         type="email"
         class="form-control"
+        pattern="^\S+@\S+\.\S+$"
         required
       />
+      <div
+        [hidden]="userForm.controls['emailAddress']?.valid"
+        class="error-message"
+      >
+        The email must be a valid email address.
+      </div>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <label for="firstName">First name</label>
       <input
         id="firstName"
@@ -23,10 +30,18 @@
         [(ngModel)]="user.firstName"
         type="text"
         class="form-control"
+        pattern="^[A-Z][a-z]{2,14}"
         required
       />
+      <div
+        [hidden]="userForm.controls['firstName']?.valid"
+        class="error-message"
+      >
+        The first name of the user must be between 3 and 15 characters and must
+        begin with a capital letter.
+      </div>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <label for="lastName">Last name</label>
       <input
         id="lastName"
@@ -34,8 +49,16 @@
         [(ngModel)]="user.lastName"
         type="text"
         class="form-control"
+        pattern="^[A-Z].{2,24}"
         required
       />
+      <div
+        [hidden]="userForm.controls['lastName']?.valid"
+        class="error-message"
+      >
+        The last name of the user must be between 3 and 25 characters and must
+        begin with a capital letter.
+      </div>
     </div>
     <div class="mb-3 text-center py-3">
       <div class="d-grid gap-2">
