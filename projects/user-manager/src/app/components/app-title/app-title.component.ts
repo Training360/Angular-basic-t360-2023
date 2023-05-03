@@ -11,14 +11,23 @@ import { Observable, interval, map, share } from 'rxjs';
 })
 export class AppTitleComponent {
 
+  // Input
   @Input() title: string = '';
   @Input() message: string = '';
+
+  // Output
   @Output() buttonWasClicked = new EventEmitter<void>();
 
   onButtonClick() {
     this.buttonWasClicked.emit();
   }
 
+  // Lifecycle hook
+  ngOnInit() {
+    console.log('I am invoked only once.');
+  }
+
+  // Interval() clock
   clock: Observable<Date> = of(new Date());
   http: HttpClient = inject(HttpClient);
 
