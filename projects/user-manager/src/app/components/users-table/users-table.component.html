@@ -35,7 +35,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users$ | async | filter:phrase | sorter:columnKey | reverse">
+        <tr
+          *ngFor="
+            let user of users$
+              | async
+              | filter : phrase
+              | sorter : columnKey
+              | reverse
+          "
+        >
           <td>{{ user.emailAddress }}</td>
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
@@ -46,14 +54,14 @@
                 class="btn btn-primary"
                 [routerLink]="'/users/' + [user.id]"
               >
-                Edit
+                <fa-icon [icon]="editIcon"></fa-icon>
               </button>
               <button
                 type="button"
                 class="btn btn-danger"
                 (click)="handleDeleteClick(user.id)"
               >
-                Delete
+                <fa-icon [icon]="deleteIcon"></fa-icon>
               </button>
             </div>
           </td>
