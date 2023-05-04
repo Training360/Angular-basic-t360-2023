@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of, switchMap } from 'rxjs';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-form',
@@ -23,6 +24,8 @@ export class UserFormComponent {
       params['id'] != '0' ? this.userService.get(params['id']) : of(new User())
     )
   );
+
+  saveIcon = faFloppyDisk;
 
   handleFormSubmit(userForm: NgForm, user: User): void {
     if (user.id == 0) {
