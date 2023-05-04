@@ -13,6 +13,11 @@ const routes: Routes = [
     component: UserFormComponent,
   },
   {
+    path: 'reactive/users/:id',
+    loadComponent: () =>
+      import('./components/user-form-reactive/user-form-reactive.component').then((x) => x.UserFormReactiveComponent),
+  },
+  {
     path: '**',
     component: UsersTableComponent,
   }

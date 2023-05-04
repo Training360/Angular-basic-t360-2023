@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
-import { faPencil, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faTrashCan, faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-users-table',
   templateUrl: './users-table.component.html',
@@ -16,6 +16,7 @@ export class UsersTableComponent {
   // Font Awesome
   editIcon = faPencil;
   deleteIcon = faTrashCan;
+  userIcon = faUser;
 
   // Search
   phrase : string = '';
@@ -25,9 +26,9 @@ export class UsersTableComponent {
   }
 
   // Delete
-  handleDeleteClick(id: number): void {
+  handleDeleteClick(user: User): void {
     confirm('Are you sure?');
-    this.userService.remove(id).subscribe(
+    this.userService.remove(user).subscribe(
       () => this.users$ = this.userService.getAll())
   }
 

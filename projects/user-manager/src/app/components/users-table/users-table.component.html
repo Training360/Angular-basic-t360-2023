@@ -3,7 +3,16 @@
     [routerLink]="['/users/0']"
     class="btn btn-warning mt-3 mb-4 py-2 px-3"
   >
-    Create new user
+    Add
+    <fa-icon [icon]="userIcon"></fa-icon>
+  </button>
+  <button
+    [routerLink]="['/reactive/users/0']"
+    class="btn btn-warning mt-3 mb-4 ms-2 py-2 px-3"
+  >
+    Add
+    <fa-icon [icon]="userIcon"></fa-icon>
+    with reactive form
   </button>
 </div>
 
@@ -59,7 +68,7 @@
               <button
                 type="button"
                 class="btn btn-danger"
-                (click)="handleDeleteClick(user.id)"
+                (click)="handleDeleteClick(user)"
               >
                 <fa-icon [icon]="deleteIcon"></fa-icon>
               </button>

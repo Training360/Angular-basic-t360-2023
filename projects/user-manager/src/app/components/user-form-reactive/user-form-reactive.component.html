@@ -1,59 +1,54 @@
+
 <div
   class="d-flex flex-column align-items-center"
   *ngIf="user$ | async as user"
 >
-  <h2 class="text-dark pt-4 pb-3">User Data</h2>
-  <form #userForm="ngForm" (ngSubmit)="handleFormSubmit(userForm, user)">
-    <div class="mb-3">
+  <h2 class="text-dark pt-4 pb-3">Create New User</h2>
+  <form [formGroup]="userForm" (ngSubmit)="handleFormSubmit()">
+    <div class="mb-3 form-group">
       <label for="emailAddress">Email address</label>
       <input
         id="emailAddress"
         name="emailAddress"
-        [(ngModel)]="user.emailAddress"
+        formControlName="emailAddress"
         type="email"
         class="form-control"
-        pattern="^\S+@\S+\.\S+$"
-        required
       />
       <div
-        [hidden]="userForm.controls['emailAddress']?.valid"
+        [hidden]="userForm.controls.emailAddress.pristine || userForm.controls.emailAddress.valid"
         class="error-message"
       >
         The email must be a valid email address.
       </div>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <label for="firstName">First name</label>
       <input
         id="firstName"
         name="firstName"
-        [(ngModel)]="user.firstName"
+        formControlName="firstName"
         type="text"
         class="form-control"
-        pattern="^[A-Z][a-z]{2,14}"
-        required
       />
       <div
-        [hidden]="userForm.controls['firstName']?.valid"
+        [hidden]="userForm.controls.firstName.pristine || userForm.controls.firstName.valid"
         class="error-message"
       >
         The first name of the user must be between 3 and 15 characters and must
         begin with a capital letter.
       </div>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <label for="lastName">Last name</label>
       <input
         id="lastName"
         name="lastName"
-        [(ngModel)]="user.lastName"
+        formControlName="lastName"
         type="text"
         class="form-control"
-        pattern="^[A-Z].{2,24}"
-        required
       />
       <div
-        [hidden]="userForm.controls['lastName']?.valid"
+        [hidden]="userForm.controls.lastName.pristine || userForm.controls.lastName.valid"
         class="error-message"
       >
         The last name of the user must be between 3 and 25 characters and must
@@ -73,3 +68,4 @@
     </div>
   </form>
 </div>
+

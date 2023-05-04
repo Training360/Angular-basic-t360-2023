@@ -1,7 +1,7 @@
 export class User {
   [key: string]: any;
-  id: number = 0;
-  firstName: string = '';
-  lastName: string = '';
-  emailAddress: string = ''
+  id?: number | undefined = 0;
+  firstName?: string | undefined= '';
+  lastName?: string | undefined= '';
+  emailAddress?: string | undefined = ''
 }
