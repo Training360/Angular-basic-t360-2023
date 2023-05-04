@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
-import { faPencil, faTrashCan, faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faTrashCan, faUser } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-users-table',
   templateUrl: './users-table.component.html',
