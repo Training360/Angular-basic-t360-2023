@@ -30,6 +30,9 @@ export class AppTitleComponent {
   // *ngIf demo
   isShown: boolean = true;
 
+  // *ngSwitch demo
+  buttonRole: string = 'output';
+
   // Interval() clock
   clock: Observable<Date> = of(new Date());
   http: HttpClient = inject(HttpClient);
