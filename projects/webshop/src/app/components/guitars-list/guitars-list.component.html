@@ -1,1 +1,3 @@
-<pre (click)="showSuccessToaster()"> {{ guitars$ |  async | json }}</pre>
+<div (click)="showSuccessToaster()" class="guitars">
+  <app-guitar-item *ngFor="let guitar of guitars$ | async" [guitar]="guitar"></app-guitar-item>
+</div>
