@@ -1,1 +1,12 @@
-<p>guitar-stock works!</p>
+<div class="guitar__stock" [ngSwitch]="stock">
+  <span *ngSwitchCase="0" class="text-red">Out of stock</span>
+  <span *ngSwitchCase="1" class="text-orange">
+    Last chance, only 1 left
+  </span>
+  <span *ngSwitchCase="2" class="text-orange">
+    Last chance, only 2 left
+  </span>
+  <span *ngSwitchDefault class="text-green">In stock</span>
+</div>
+
+

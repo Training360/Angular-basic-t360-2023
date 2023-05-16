@@ -1,0 +1,25 @@
+@use '../../../assets/modules/colors' as *;
+
+.guitar__stock {
+  font-weight: bold;
+}
+
+.text {
+
+  &-center {
+    text-align: center;
+  }
+
+  &-red {
+    color: $red;
+  }
+
+  &-orange {
+    color: $orange;
+  }
+
+  &-green {
+   color: $green;
+  }
+
+}

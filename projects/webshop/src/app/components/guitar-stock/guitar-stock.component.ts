@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-guitar-stock',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./guitar-stock.component.scss']
 })
 export class GuitarStockComponent {
-
+  @Input() stock: number = 0;
 }
