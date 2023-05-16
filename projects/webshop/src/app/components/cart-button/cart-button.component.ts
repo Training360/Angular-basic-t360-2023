@@ -15,12 +15,23 @@ export class CartButtonComponent {
   count: number = 0;
   buttonText: string = 'Add to cart';
 
+  minCount = 0;
+
   handleDescreaseCountClick() {
     this.count -= 1;
+
+    if (this.count < this.minCount) {
+      this.count = this.minCount;
+    }
   }
 
   handleIncreaseCountClick() {
+    const maxCount = this.guitar.stock;
     this.count += 1;
+
+    if (this.count > maxCount) {
+      this.count = maxCount;
+    }
   }
 
   handleCartButtonClick(guitar: Guitar) {
