@@ -1,3 +1,20 @@
+<div class="guitar__stock">
+  <ng-container *ngIf="stock === 0; else stockLevelLow">
+    <span class="text-red">Out of stock</span>
+  </ng-container>
+  <ng-template #stockLevelLow>
+    <ng-container *ngIf="stock < 3; else stockLevelHigh">
+      <span class="text-orange">
+        Last chance, only {{ stock }} left
+      </span>
+    </ng-container>
+    <ng-template #stockLevelHigh>
+      <span class="text-green">In stock</span>
+    </ng-template>
+  </ng-template>
+</div>
+
+<!--
 <div class="guitar__stock" [ngSwitch]="stock">
   <span *ngSwitchCase="0" class="text-red">Out of stock</span>
   <span *ngSwitchCase="1" class="text-orange">
@@ -8,5 +25,4 @@
   </span>
   <span *ngSwitchDefault class="text-green">In stock</span>
 </div>
-
-
+-->
