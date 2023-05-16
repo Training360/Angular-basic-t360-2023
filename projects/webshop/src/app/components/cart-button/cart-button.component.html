@@ -1,6 +1,8 @@
 <div class="cart">
-  <button>-</button>
-  <input type="text"/>
-  <button>+</button>
-  <button class="add-to-cart">Add to cart</button>
+  <button (click)="handleDescreaseCountClick()">-</button>
+  <input [(ngModel)]="count" type="text" />
+  <button (click)="handleIncreaseCountClick()">+</button>
+  <button class="add-to-cart" (click)="handleCartButtonClick()">
+    Add to cart
+  </button>
 </div>

@@ -18,6 +18,7 @@ import { GuitarRatingComponent } from './components/guitar-rating/guitar-rating.
 import { GuitarStockComponent } from './components/guitar-stock/guitar-stock.component';
 import { GuitarDescriptionComponent } from './components/guitar-description/guitar-description.component';
 import { CartButtonComponent } from './components/cart-button/cart-button.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { CartButtonComponent } from './components/cart-button/cart-button.compon
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
 	  ToastrModule.forRoot()
   ],
