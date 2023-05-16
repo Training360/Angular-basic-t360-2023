@@ -1,0 +1,29 @@
+@use '../../../assets/modules/colors' as *;
+
+button {
+  padding: 0.25rem 1rem;
+  background: $dark;
+  border: 1px solid $dark;
+  color: $light;
+
+  &:active {
+    background: $light;
+    color: $dark;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input {
+  border: 1px solid $dark;
+  padding: 0.25rem;
+  border-radius: 0;
+  width: 5ch;
+  text-align: center;
+}
+
+.add-to-cart {
+  margin: 0 0 0 1rem;
+}
