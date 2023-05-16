@@ -2,7 +2,7 @@
   <button (click)="handleDescreaseCountClick()">-</button>
   <input [(ngModel)]="count" type="text" />
   <button (click)="handleIncreaseCountClick()">+</button>
-  <button class="add-to-cart" (click)="handleCartButtonClick()">
-    Add to cart
+  <button class="add-to-cart" (click)="handleCartButtonClick(guitar)">
+    {{ buttonText }}
   </button>
 </div>

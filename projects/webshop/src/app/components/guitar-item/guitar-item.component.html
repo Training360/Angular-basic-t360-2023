@@ -8,6 +8,6 @@
     <app-guitar-price [price]="guitar.price"></app-guitar-price>
     <app-guitar-rating [rating]="guitar.rating"></app-guitar-rating>
     <app-guitar-stock [stock]="guitar.stock"></app-guitar-stock>
-    <app-cart-button></app-cart-button>
+    <app-cart-button *ngIf="guitar.stock > 0" [guitar]="guitar" />
   </div>
 </div>
