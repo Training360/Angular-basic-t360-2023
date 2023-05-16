@@ -1,1 +1,4 @@
-<p>guitar-rating works!</p>
+<div class="guitar__rating">
+  <span *ngIf="rating > 0">{{ ratingStars() }}</span>
+  <span *ngIf="rating <= 0">Not rated</span>
+</div>
