@@ -1,0 +1,16 @@
+.cart {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+th,
+td {
+  padding: 0.25rem 1rem;
+}
+
+tfoot {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: right;
+}

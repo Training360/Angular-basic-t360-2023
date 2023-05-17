@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainNavigationComponent } from './components/main-navigation/main-navigation.component';
 import { GuitarsListComponent } from './components/guitars-list/guitars-list.component';
-import { CartComponent } from './components/cart/cart.component';
 import { GuitarItemComponent } from './components/guitar-item/guitar-item.component';
 import { GuitarImageComponent } from './components/guitar-image/guitar-image.component';
 import { GuitarTitleComponent } from './components/guitar-title/guitar-title.component';
@@ -19,12 +18,12 @@ import { GuitarStockComponent } from './components/guitar-stock/guitar-stock.com
 import { GuitarDescriptionComponent } from './components/guitar-description/guitar-description.component';
 import { CartButtonComponent } from './components/cart-button/cart-button.component';
 import { FormsModule } from '@angular/forms';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainNavigationComponent,
     GuitarsListComponent,
-    CartComponent,
     GuitarItemComponent,
     GuitarImageComponent,
     GuitarTitleComponent,
@@ -32,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     GuitarRatingComponent,
     GuitarStockComponent,
     CartButtonComponent,
-    GuitarDescriptionComponent
+    GuitarDescriptionComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

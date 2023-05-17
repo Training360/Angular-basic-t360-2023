@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-
-interface CartItem {
-  id: number;
-  count: number;
-}
+import { CartItem } from '../model/cart-item';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +32,9 @@ export class CartService {
     if (index !== -1) {
       this.cart.splice(index, 1);
     }
+  }
+
+  get totalPrice(): number {
+    return this.cart.reduce((prev, curr) => prev + curr.count * curr.price, 0);
   }
 }

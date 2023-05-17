@@ -1,0 +1,24 @@
+<div class="cart">
+  <h1>Cart Summary</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Count</th>
+        <th>Sum</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cart">
+        <td>{{ item.title }}</td>
+        <td>{{ item.count }}</td>
+        <td>{{ item.count * item.price | currency: 'EUR':'symbol':'4.2-2' }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">{{ totalPrice | currency: 'EUR':'symbol':'4.2-2' }}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

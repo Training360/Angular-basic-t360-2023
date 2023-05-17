@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GuitarsListComponent } from './components/guitars-list/guitars-list.component';
-import { CartComponent } from './components/cart/cart.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    component: CartComponent,
+    component: ShoppingCartComponent,
   },
   {
     path: '**',
