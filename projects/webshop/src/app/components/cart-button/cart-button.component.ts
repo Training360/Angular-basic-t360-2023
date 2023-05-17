@@ -8,7 +8,6 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./cart-button.component.scss']
 })
 export class CartButtonComponent {
-
   @Input() guitar: Guitar = new Guitar();
   cartService: CartService = inject(CartService);
 

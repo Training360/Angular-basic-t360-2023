@@ -5,7 +5,6 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root'
 })
 export class NotificationService {
-
   toastr: ToastrService = inject(ToastrService);
 
   showSuccessWithTimeout(message: string, title: string, timespan: number){

@@ -7,7 +7,6 @@ import { Guitar } from '../model/guitar';
   providedIn: 'root'
 })
 export class GuitarService {
-
   usersURL: string = 'http://localhost:3002/guitars';
 
   constructor(
@@ -16,5 +15,4 @@ export class GuitarService {
   getAll(): Observable<Guitar[]> {
     return this.http.get<Guitar[]>(this.usersURL);
   }
-
 }
