@@ -11,11 +11,6 @@ import { NotificationService } from 'src/app/service/notification.service';
 })
 export class GuitarsListComponent {
   guitarService: GuitarService = inject(GuitarService);
-  notifyService : NotificationService = inject(NotificationService);
 
   guitars$: Observable<Guitar[]> = this.guitarService.getAll();
-
-  showSuccessToaster(){
-    this.notifyService.showSuccessWithTimeout("Data shown successfully", "Notification", 5000)
-  }
 }

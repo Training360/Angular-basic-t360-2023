@@ -13,7 +13,13 @@ export class NotificationService {
     })
   }
 
-  showErrorWithTimeout(message: string, title: string, timespan: number){
+  showUpdatedWithTimeout(message: string, title: string, timespan: number){
+    this.toastr.warning(message, title ,{
+      timeOut :  timespan
+    })
+  }
+
+  showDeletedWithTimeout(message: string, title: string, timespan: number){
     this.toastr.error(message, title ,{
       timeOut :  timespan
     })
