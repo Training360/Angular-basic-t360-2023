@@ -16,27 +16,26 @@ export class CartButtonComponent {
   buttonText: string = 'Add to cart';
 
   minCount = 0;
-
-  handleDescreaseCountClick() {
+  handleDescreaseCountClick(): void {
     this.count -= 1;
-
-    if (this.count < this.minCount) {
-      this.count = this.minCount;
-    }
   }
 
-  handleIncreaseCountClick() {
-    const maxCount = this.guitar.stock;
+  handleIncreaseCountClick(): void {
     this.count += 1;
-
-    if (this.count > maxCount) {
-      this.count = maxCount;
-    }
   }
 
-  handleCartButtonClick(guitar: Guitar) {
-    this.cartService.addItemToCart(guitar, this.count);
-    this.buttonText = 'Update cart';
-    console.log(this.cartService.cart);
+  handleCartButtonClick(guitar: Guitar): void {
+    const { id } = guitar;
+    const item = this.cartService.getItemById(id);
+
+    if (!item && this.count > 0) {
+      this.cartService.addItemToCart(guitar, this.count);
+      this.buttonText = 'Update cart';
+    } else if (item?.count !== this.count && this.count > 0) {
+      this.cartService.changeItemCount(id, this.count);
+    } else if (item && this.count === 0) {
+      this.cartService.removeFromCart(id);
+      this.buttonText = 'Add to cart';
+    }
   }
 }
