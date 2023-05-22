@@ -10,17 +10,7 @@ import { Observable, interval, map, share } from 'rxjs';
   styleUrls: ['./app-title.component.scss']
 })
 export class AppTitleComponent {
-
-  // Input
   @Input() title: string = '';
-  @Input() message: string = '';
-
-  // Output
-  @Output() buttonWasClicked = new EventEmitter<void>();
-
-  onButtonClick() {
-    this.buttonWasClicked.emit();
-  }
 
   // Lifecycle hook
   ngOnInit() {
@@ -29,9 +19,6 @@ export class AppTitleComponent {
 
   // *ngIf demo
   isShown: boolean = true;
-
-  // *ngSwitch demo
-  buttonRole: string = 'output';
 
   // Interval() clock
   clock: Observable<Date> = of(new Date());
