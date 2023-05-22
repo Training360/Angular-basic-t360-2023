@@ -2,7 +2,7 @@
   <a class="navbar-brand text-white h4 mb-sm-0 ms-2">{{
     title
   }}</a>
-  <h4 *ngIf="isShown" class="text-warning mb-sm-0 me-2 ps-2">
+  <h4 class="text-warning mb-sm-0 me-2 ps-2">
     {{ clock | async | date : "hh:mm:ss a" }}
   </h4>
 </nav>

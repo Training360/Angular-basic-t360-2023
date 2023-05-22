@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { inject } from '@angular/core';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { of } from 'rxjs';
 import { Observable, interval, map, share } from 'rxjs';
 
@@ -12,17 +10,7 @@ import { Observable, interval, map, share } from 'rxjs';
 export class AppTitleComponent {
   @Input() title: string = '';
 
-  // Lifecycle hook
-  ngOnInit() {
-    console.log('I am invoked only once.');
-  }
-
-  // *ngIf demo
-  isShown: boolean = true;
-
-  // Interval() clock
   clock: Observable<Date> = of(new Date());
-  http: HttpClient = inject(HttpClient);
 
   constructor() {
     this.clock = interval(1000)
