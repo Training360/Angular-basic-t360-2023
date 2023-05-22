@@ -24,6 +24,15 @@
 
   a {
     color: $green;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  li.output__message {
+    color: $orange;
+    font-size: 0.9rem;
   }
 
 }

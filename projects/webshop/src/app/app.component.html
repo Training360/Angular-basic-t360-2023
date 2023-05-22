@@ -1,4 +1,7 @@
-<app-main-navigation></app-main-navigation>
+<app-main-navigation
+  [message]="currentMessage"
+  (buttonWasClicked)="buttonClickedMessage()"
+></app-main-navigation>
 <main class="container">
   <router-outlet></router-outlet>
 </main>

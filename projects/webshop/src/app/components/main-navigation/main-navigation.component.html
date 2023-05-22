@@ -1,10 +1,11 @@
 <nav class="nav">
   <ul class="nav__list">
     <li class="nav__item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-      <a class="nav__link" routerLink="/">
+      <a (click)="onButtonClick()" class="nav__link" routerLink="/">
         Guitars
       </a>
     </li>
+    <li class="output__message">{{ message }}</li>
     <li class="nav__item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
       <a class="nav__link"  routerLink="/cart">
         Cart ({{ totalCount() }})

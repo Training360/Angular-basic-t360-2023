@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'webshop';
+
+  currentMessage: string = '';
+
+  // Output
+  buttonClickedMessage() {
+    if (this.currentMessage === 'Hey, you have just clicked the button')
+      this.currentMessage = '';
+    else this.currentMessage = 'Hey, you have just clicked the button';
+  }
 }
