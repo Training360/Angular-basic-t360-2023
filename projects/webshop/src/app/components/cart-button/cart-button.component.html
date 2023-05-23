@@ -1,4 +1,4 @@
-<div class="cart">
+<div *appDelay="2000" class="cart">
   <button (click)="handleDescreaseCountClick()">-</button>
   <input [(ngModel)]="count" type="text" />
   <button (click)="handleIncreaseCountClick()">+</button>

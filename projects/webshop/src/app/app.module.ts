@@ -19,6 +19,7 @@ import { GuitarDescriptionComponent } from './components/guitar-description/guit
 import { CartButtonComponent } from './components/cart-button/cart-button.component';
 import { FormsModule } from '@angular/forms';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { DelayDirective } from './directive/delay.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     GuitarStockComponent,
     CartButtonComponent,
     GuitarDescriptionComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    DelayDirective
   ],
   imports: [
     BrowserModule,
