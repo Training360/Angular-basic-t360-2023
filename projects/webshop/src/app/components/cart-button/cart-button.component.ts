@@ -17,7 +17,7 @@ export class CartButtonComponent {
   buttonText: string = 'Add to cart';
   minCount = 0;
 
-  handleDescreaseCountClick(): void {
+  handleDecreaseCountClick(): void {
     this.count -= 1;
 
     if (this.count < this.minCount) {
@@ -42,7 +42,7 @@ export class CartButtonComponent {
       this.cartService.addItemToCart(guitar, this.count);
       this.buttonText = 'Update cart';
       this.toast.showSuccessWithTimeout('Item has been added to the cart', 'Notification', 3000);
-    } else if (item?.stock !== this.count && this.count > 0) {
+    } else if (item!.stock >= this.count && this.count > 0) {
       this.cartService.changeItemCount(id, this.count);
       this.toast.showUpdatedWithTimeout('Item count has changed', 'Notification', 3000);
     } else if (item && this.count === 0) {
