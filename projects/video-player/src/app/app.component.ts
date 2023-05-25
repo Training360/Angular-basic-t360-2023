@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Video } from './model/video';
 import { VideoService } from './service/video.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,20 +11,20 @@ import { VideoService } from './service/video.service';
 })
 export class AppComponent {
   title = 'video-player';
-  phrase : string = '';
+
+  videos: any = [];
+  selectedVideo: Video = new Video();
 
   videoService: VideoService = inject(VideoService);
 
-  searchVideo(event : Event): void {
-      this.phrase = (event.target as HTMLInputElement).value;
+  searchVideos(query: string) {
+    this.videoService.getVideos(query).subscribe((response) => {
+      this.videos = response;
+      this.selectedVideo = this.videos[0];
+    });
   }
 
-  /*
-  selectedVideo: Video = new Video();
-
-  onVideoSelected(video: Video) {
+  selectVideo(video: Video) {
     this.selectedVideo = video;
   }
-  */
-
 }

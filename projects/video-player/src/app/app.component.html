@@ -1,19 +1,16 @@
 <header>
   <div class="container">
-    <app-search-bar (keyup)="searchVideo($event)"></app-search-bar>
+    <app-search-bar (formSubmit)="searchVideos($event)"></app-search-bar>
   </div>
 </header>
 <main>
   <div class="container">
-    <div class="row">
+    <div *ngIf="videos" class="row">
       <div class="col-lg-8">
-        <app-video-details></app-video-details>
-        <!--<app-video-details [video]="selectedVideo"></app-video-details>-->
+        <app-video-details [video]="selectedVideo"></app-video-details>
       </div>
       <div class="col-lg-4">
-       <app-video-list [phrase]="phrase"></app-video-list>
-       <!--<app-video-list [phrase]="phrase" (videoSelected)="onVideoSelected(video)"></app-video-list>
-       -->
+        <app-video-list [videos$]="videos" (selectVideo)="selectVideo($event)"></app-video-list>
       </div>
     </div>
   </div>

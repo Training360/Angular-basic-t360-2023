@@ -1,5 +1,5 @@
 <app-video-item
-  *ngFor="let video of videos$ | async | filter:phrase"
+  *ngFor="let video of videos$ | async"
   [video]="video"
-  [videos$]="videos$"
-  ></app-video-item>
+  (click)="onVideoClick(video)"
+></app-video-item>

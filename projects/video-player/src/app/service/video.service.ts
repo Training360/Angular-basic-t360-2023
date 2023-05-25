@@ -9,31 +9,29 @@ import { inject } from '@angular/core';
 })
 export class VideoService {
 
-  key: string = 'AIzaSyCNYVz2WNwMqpivd2MuXi4bIlnnDUZhVXg';
-  baseURL: string = 'https://www.googleapis.com/youtube/v3/search';
+  baseURL: string = 'https://www.googleapis.com/youtube/v3';
+
+  defaultParams: {part: string, maxResults: number, key: string} = {
+    part: 'snippet',
+    maxResults: 12,
+    key: 'AIzaSyCNYVz2WNwMqpivd2MuXi4bIlnnDUZhVXg',
+  };
 
   http: HttpClient = inject(HttpClient);
 
-  defaultParams: {part: string, maxResults: number, key: string, query: string} = {
-    part: 'snippet',
-    maxResults: 75,
-    key: 'AIzaSyCNYVz2WNwMqpivd2MuXi4bIlnnDUZhVXg',
-    query: 'angular'
-  };
-
-  getAll(): Observable<Video[]> {
+  getVideos(query: string): Observable<Video[]> {
     const params = new HttpParams()
     .set('part', this.defaultParams.part)
     .set('maxResults', this.defaultParams.maxResults.toString())
     .set('key', this.defaultParams.key)
-    .set('q', this.defaultParams.query);
+    .set('q', query);
 
   const url = `${this.baseURL}?${params.toString()}`;
 
-  return this.http.get<Video[]>(url)
-    .pipe(
-      map((response: any) => response.items)
-    );
+  return this.http.get<Video[]>(url, { params }).pipe(
+    map((response: any) => {
+      return response.items;
+    })
+  );
   }
-
 }

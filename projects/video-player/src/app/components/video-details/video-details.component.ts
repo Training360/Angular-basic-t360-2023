@@ -8,19 +8,12 @@ import { Video } from 'src/app/model/video';
   styleUrls: ['./video-details.component.scss']
 })
 export class VideoDetailsComponent {
-
   @Input() video: Video = new Video();
-  videoSrc: string = '';
 
-  /*
-
-  // In Vue.js
-
-  const videoSrc = computed(() => {
-  const baseSrc = 'https://youtube.com/embed/'
-  return props.video.id.videoId
-    ? baseSrc + props.video.id.videoId
-    : `${baseSrc}videoseries?list=${props.video.id.playlistId}`
-  })
-  */
+  get videoSrc(): string {
+    const baseSrc = 'https://youtube.com/embed/';
+    return this.video?.id?.videoId
+      ? baseSrc + this.video.id.videoId
+      : `${baseSrc}videoseries?list=${this.video?.id?.playlistId}`;
+  }
 }

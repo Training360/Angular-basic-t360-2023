@@ -10,10 +10,13 @@ import { VideoService } from 'src/app/service/video.service';
   styleUrls: ['./video-list.component.scss']
 })
 export class VideoListComponent {
-
   videoService: VideoService = inject(VideoService);
+  query: string = '';
 
-  @Input() videos$: Observable<Video[]> = this.videoService.getAll()
-  @Input() phrase: string ='';
+  @Input() videos$: Observable<Video[]> = this.videoService.getVideos(this.query)
+  @Output() selectVideo: EventEmitter<Video> = new EventEmitter<Video>();
 
+  onVideoClick(video: Video) {
+    this.selectVideo.emit(video);
+  }
 }

@@ -6,10 +6,11 @@ import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent {
+  @Input() query: string = '';
 
-  phrase: string = '';
+  @Output() formSubmit: EventEmitter<string> = new EventEmitter<string>();
 
-  searchEvent(event : Event): void {
-      this.phrase = (event.target as HTMLInputElement).value;
+  submitForm() {
+    this.formSubmit.emit(this.query);
   }
 }

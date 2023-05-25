@@ -1,26 +1,19 @@
 <div
-    role="button"
-    tabindex="0"
-    class="container p-1 video"
-  >
-<!--
-  <div
-    role="button"
-    tabindex="0"
-    class="container p-1 video"
-    (click)="selectVideo(video)"
-  >
--->
-    <div class="row">
-      <div class="col-6">
-        <img
-          class="img-fluid"
-          [src]="video.snippet.thumbnails.medium.url"
-          [alt]="video.snippet.title"
-        />
-      </div>
-      <div class="col-6 p-0">
-        <h3 class="h6">{{ video.snippet.title }}</h3>
+      role="button"
+      tabindex="0"
+      class="container p-1 video"
+      (keyup.enter)="elementRef.nativeElement.click()"
+    >
+      <div class="row">
+        <div class="col-6">
+          <img
+            class="img-fluid"
+            [src]="video.snippet.thumbnails.medium.url"
+            [alt]="video.snippet.title"
+          />
+        </div>
+        <div class="col-6 p-0">
+          <h3 class="h6">{{ video.snippet.title }}</h3>
+        </div>
       </div>
     </div>
-  </div>
