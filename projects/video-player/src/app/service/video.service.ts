@@ -14,7 +14,7 @@ export class VideoService {
   defaultParams: {part: string, maxResults: number, key: string} = {
     part: 'snippet',
     maxResults: 12,
-    key: 'AIzaSyCNYVz2WNwMqpivd2MuXi4bIlnnDUZhVXg',
+    key: 'AIzaSyBf11FTLXiRVJTFKTCZnVLM2HL1KUQxyLI',
   };
 
   http: HttpClient = inject(HttpClient);
