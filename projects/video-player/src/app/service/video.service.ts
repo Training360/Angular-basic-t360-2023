@@ -28,7 +28,7 @@ export class VideoService {
 
   const url = `${this.baseURL}?${params.toString()}`;
 
-  return this.http.get<Video[]>(url, { params }).pipe(
+  return this.http.get<Video[]>(url).pipe(
     map((response: any) => {
       return response.items;
     })
