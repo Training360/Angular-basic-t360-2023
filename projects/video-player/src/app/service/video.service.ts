@@ -9,7 +9,7 @@ import { inject } from '@angular/core';
 })
 export class VideoService {
 
-  baseURL: string = 'https://www.googleapis.com/youtube/v3';
+  baseURL: string = 'https://www.googleapis.com/youtube/v3/search';
 
   defaultParams: {part: string, maxResults: number, key: string} = {
     part: 'snippet',
