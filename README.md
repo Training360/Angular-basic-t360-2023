@@ -1,15 +1,34 @@
 # Angular alapozó kurzus 2023
 
-## TypeScript modul
-- [TypeScript - Bevezetés](https://github.com/Training360/TypeScript-basic-t360-2023)
-- [TypeScript - Beállítások](https://github.com/Training360/TypeScript-basic-t360-2023)
-- [TypeScript - Tömbök](https://github.com/Training360/TypeScript-basic-t360-2023)
-- [TypeScript - Speciális típusok](https://github.com/Training360/TypeScript-basic-t360-2023)
-- [TypeScript - OOP alapelvek](https://github.com/Training360/TypeScript-basic-t360-2023)
-- [TypeScript - Objektumtípusok](https://github.com/Training360/TypeScript-basic-t360-2023)
-- [TypeScript - Osztályok](https://github.com/Training360/TypeScript-basic-t360-2023)
-- [TypeScript - OOP](https://github.com/Training360/TypeScript-basic-t360-2023)
-- [TypeScript - Összefoglaló](https://github.com/Training360/TypeScript-basic-t360-2023)
+## TypeScript
+- [TypeScript Module](https://github.com/Training360/Angular-basic-2023-typescript)
+
+## Angular Architektúra
+- [Architect Module](https://github.com/Training360/Angular-basic-2023-architect)
+
+## Angular Direktívák
+- [Directives Module](https://github.com/Training360/Angular-basic-2023-directives)
+
+## RxJS
+- [RxJS Module](https://github.com/Training360/RxJS-basic-2023)
+
+## Angular HtttpClient
+- [HttpClient Module](https://github.com/Training360/Angular-basic-2023-http)
+
+## Angular Routing
+- [Routing Module](https://github.com/Training360/Angular-basic-2023-routing)
+
+## Angular Form
+- [Form Module](https://github.com/Training360/Angular-basic-2023-form)
+
+## Angular Reactive Form
+- [Reactive Form Module](https://github.com/Training360/Angular-basic-2023-form-reactive)
+
+## Angular Standalone
+- [Standalone Module](https://github.com/Training360/Angular-basic-2023-standalone)
+
+## Ngx-bootstrap
+- [NgxBootstrap Module](https://github.com/Training360/Angular-basic-2023-ngxbootstrap)
 
 ## Projekt modul
 - Bevezetés: két projekt bemutatása
@@ -32,4 +51,7 @@
 - Adatok listázása:
   - [GuitarListComponent](projects\webshop\src\app\components\guitars-list\guitars-list.component.ts)
 - Összefoglaló
+
+## Publikálás
+
 
